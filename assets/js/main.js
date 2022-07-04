@@ -1,15 +1,73 @@
+
 var swiper = new Swiper(".slide-content", {
     slidesPerView: 3,
-    spaceBetween: 30,
-    slidesPerGroup: 3,
+    spaceBetween: 25,
     loop: true,
-    loopFillGroupWithBlank: true,
+    centerSlide: 'true',
+    fade: 'true',
+    grabCursor: 'true',
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
+      dynamicBullets: true,
     },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+
+    breakpoints:{
+        0: {
+            slidesPerView: 1,
+        },
+        520: {
+            slidesPerView: 2,
+        },
+        950: {
+            slidesPerView: 3,
+        },
+    },
   });
+
+
+function scrollUp(){
+    const scrollUp = document.getElementById('scroll-up');
+    // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
+    if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+function scrollHeader(){
+  const nav = document.getElementById('header')
+  const btn = document.getElementById('scroll-up')
+
+  // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
+  if(this.scrollY >= 945) {
+    nav.classList.add('bg-about')
+    btn.classList.add('bg-about')
+  } else {
+  nav.classList.remove('bg-about')
+  btn.classList.remove('bg-about')
+} 
+
+  if(this.scrollY >= 1400){
+    btn.classList.add('bg-skills')
+    nav.classList.add('bg-skills')
+  } else {
+  nav.classList.remove('bg-skills')
+  btn.classList.remove('bg-skills')
+  }
+
+
+  if(this.scrollY >= 2000){
+    nav.classList.add('bg-projects')
+    btn.classList.add('bg-projects')
+  } else {
+    btn.classList.remove('bg-projects')
+    nav.classList.remove('bg-projects')
+  }
+
+
+}
+window.addEventListener('scroll', scrollHeader)
+
