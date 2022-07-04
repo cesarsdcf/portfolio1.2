@@ -42,7 +42,7 @@ function scrollHeader(){
   const btn = document.getElementById('scroll-up')
 
   // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
-  if(this.scrollY >= 945) {
+  if(this.scrollY >= 700) {
     nav.classList.add('bg-about')
     btn.classList.add('bg-about')
   } else {
@@ -71,3 +71,35 @@ function scrollHeader(){
 }
 window.addEventListener('scroll', scrollHeader)
 
+
+
+window.sr = ScrollReveal({ reset:true})
+
+sr.reveal('.animation-top', { 
+  duration: 1500,
+  distance: '-400px',
+})
+
+sr.reveal('.animation-left-1', { 
+  duration: 1500,
+  distance: '-400px',
+  origin: 'right'
+})
+
+sr.reveal('.animation-left-2', { 
+  duration: 2000,
+  distance: '-400px',
+  origin: 'right'
+})
+
+sr.reveal('.animation-left-bottom', { 
+  duration: 2000,
+  distance: '-400px',
+  origin: 'right'
+})
+
+sr.reveal('.animation-right-1', { 
+  duration: 2000,
+  distance: '-400px',
+  origin: 'left'
+})

@@ -31,9 +31,10 @@ h1 {
     font-weight: 900;
     line-height: 12rem;
     font-size: 15rem;
-
 }
-
+.animation{
+    visibility: hidden;
+}
 h2 {
     font-family: 'Playfair Display', serif;
     font-size: 4rem;
@@ -190,7 +191,6 @@ p {
 
 .home-btn-position {
     margin-top: 5rem;
-    transition:3s;
 }
 
 .scrollup {
