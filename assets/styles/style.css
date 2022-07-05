@@ -115,7 +115,7 @@ p {
 }
 
 .header-content a {
-    padding-left: 2rem;
+    padding: 2rem;
     text-transform: uppercase;
 }
 
@@ -124,11 +124,11 @@ p {
 }
 
 .header ul li a {
+    padding: 2rem;
     text-transform: uppercase;
     display: block;
     color: rgba(255, 255, 255, 0.479);
     transition: 250ms;
-    padding: 2rem;
 }
 
 
@@ -196,18 +196,20 @@ p {
 .scrollup {
     color: white;
     position: fixed;
-    z-index: 9;
     bottom: -10rem;
     left: calc(100% - 75px);
     width: 50px;
     height: 50px;
     font-size: 2rem;
-    transition: all 0.5s ease-in-out;
+    transition: 0.3s;
     visibility: visible;
     border-radius: 50%;
     border: none;
     transform: translateZ(0);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .scrollup:hover {
@@ -307,7 +309,7 @@ p {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .skills-img h2 {
@@ -666,6 +668,40 @@ p {
     font-weight: 600;
 }
 
+#btn-mobile {
+    display: none;
+}
+
+.bg-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    z-index: 1000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-content {
+    width: 500px;
+    height: 300px;
+    background-color: var(--white-color);
+    border-radius: 4px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size:42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
 @media screen and (max-width: 574px) {
     .skills-img ul {
         margin-top: 6rem;
@@ -679,20 +715,27 @@ p {
         min-height: 50vh;
     }
 
+    .section-skills {
+        padding-bottom: 10rem;
+    }
+
     .skills-text {
         padding-top: 0;
     }
 
     .about-content {
+        display:flex;
         text-align: center;
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .about-img {
-        display: none;
+       max-width: 50%;
     }
 
 }
+
 
 @media screen and (max-width:650px) {
 
@@ -712,6 +755,73 @@ p {
 
     .title-home h1 {
         font-size: 12rem;
+    }
+
+    #btn-mobile {
+        display: flex;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: var(--white-color);
+        font-size: 2rem;
+        gap: .5rem;
+    }
+
+    #menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        top:53px;
+        right: 0;
+        transition: 0.3s;
+        z-index: 1000;
+        height: 0px;
+        background-color: var(--home-color);
+        visibility: hidden;
+        overflow-y: hidden ;
+    }
+
+    .header-content {
+        justify-content: space-between;
+        margin-right: 2rem;
+    }
+
+    #nav.active #menu {
+        height: 100vh;
+        visibility: visible;
+    }
+
+    #icon-nav {
+        display: block;
+        border-top: 2px solid;
+        width: 20px;
+    }
+
+    #icon-nav::after, #icon-nav::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        margin-top: 5px;
+        background: currentColor;
+        transition: 0.3s;
+        position: relative;
+    }
+
+    #nav.active #icon-nav {
+        border-top-color: transparent;
+    }
+
+    #nav.active #icon-nav::before {
+        transform: rotate(135deg);
+    }
+
+    #nav.active #icon-nav::after {
+        transform: rotate(-135deg);
+        top:-7px;
     }
 
 

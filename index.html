@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="./assets/styles/style.css">
-    <title>Page</title>
+    <title>Portfolio</title>
 
     <link rel="stylesheet" href="./assets/styles/swiper-bundle.min.css">
 </head>
@@ -17,9 +17,10 @@
     <header class="header bg-home" id="header">
         <div class="main-content header-content ">
             <a href="#">Portfolio</a>
-
-            <nav class="nav">
-                <ul>
+            <nav id="nav">
+                <button id="btn-mobile"><span id="icon-nav"></span>
+                </button>
+                <ul id="menu">
                     <li><a class="nav-li" href="#home">Home</a></li>
                     <li><a class="nav-li" href="#about">About</a></li>
                     <li><a class="nav-li" href="#skills">Skills</a></li>
@@ -51,25 +52,23 @@
         <div class="main-content about-content">
             <div class="about-text">
                 <div class="line-decoration">
-                    <h2>About</h2>
+                    <h2 class='animation-top'>About</h2>
                 </div>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti impedit eius officiis fugit minima
-                    non cum veniam voluptate aperiam voluptatum, quae quas rem vitae aliquam illum modi nostrum commodi
-                    quidem!</p>
-                </div>
-                <div class="about-img">
-                    <img src="./assets/img/img-about.svg" alt="">
- 
-                    <div id="skills"></div>
-                </div>
+                <p class='animation-left-2'>Olá, Tenho 20 anos, sou um estudante de Ciência da Computação e tenho como objetivo me torna um Desenvolvedor Full Stack. Esse é meu primeiro Porfólio Web onde ele foi desenvolvido apenas com HTML, CSS e JavaScript.
+                </p>
+            </div>
+            <div class="about-img animation-right-1">
+                <img src="./assets/img/img-about.svg" alt="">
+            </div>
+            <div id="skills"></div>
         </div>
     </section>
 
     <section class="section-skills">
         <div class="main-content skills-content">
             <div class="skills-img">
-                <ul>
+                <ul class='animation-left-2'>
                     <li class="s-6">HTML5</li>
                     <li class="s-5">CSS</li>
                     <li class="s-4">JavaScript</li>
@@ -79,8 +78,8 @@
                 </ul>
             </div>
             <div class="skills-text">
-                <h2>Skills</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti impedit eius officiis fugit minima
+                <h2 class='animation-top'>Skills</h2>
+                <p class='animation-right-1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti impedit eius officiis fugit minima
                     non cum veniam voluptate aperiam voluptatum, quae quas rem vitae aliquam illum modi nostrum commodi
                     quidem!</p>
             </div>
@@ -89,10 +88,10 @@
 
     <section class="section-projects" id="projects">
         <div class="main-content projects-content">
-            <div class="title-projects">
+            <div class="title-projects animation-left-2">
                 <h2>Projects</h2>
             </div>
-            <div class="slide-container swiper">
+            <div class="slide-container swiper animation-top">
                 <div class="slide-content">
                     <div class="card-wrapper swiper-wrapper">
                         <div class="card swiper-slide">
@@ -136,12 +135,18 @@
 
     <footer id="footer" class="footer">
         <div class="footer-content">
-            <p>Create by Cesar Silva</p>
+            <p>Created by Cesar Silva</p>
         </div>
-
     </footer>
 
-    <button class="scrollup bg-home" id="scroll-up"><i class="uil uil-envelope-alt"></i></button>
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="close">+</div>
+            <h2>EM BREVE</h2>
+        </div>
+    </div>
+
+    <a href="#home" class="scrollup bg-home" id="scroll-up"><i class="uil uil-envelope-alt"></i></a>
 
 
 
